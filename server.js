@@ -9,6 +9,7 @@ const { parse } = require('vcf');
 
 const app = express();
 const upload = multer({ dest: 'uploads/' });
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -42,4 +43,4 @@ app.post('/send', upload.single('vcf'), async (req, res) => {
   res.send('✅ Broadcast done!');
 });
 
-app.listen(3000, () => console.log('🚀 Server on http://localhost:3000'));
+app.listen(3000, () => console.log('🚀 Server running on http://localhost:3000'));
