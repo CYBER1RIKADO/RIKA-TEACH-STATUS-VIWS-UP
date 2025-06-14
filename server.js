@@ -3,8 +3,8 @@ const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
 const { Boom } = require('@hapi/boom');
-const makeWASocket = require('@whiskeysockets/baileys').default;
-const { useSingleFileAuthState } = require('@whiskeysockets/baileys');
+const makeWASocket = require('baileys').default;
+const { useSingleFileAuthState } = require('baileys');
 const { parse } = require('vcf');
 
 const app = express();
@@ -56,3 +56,4 @@ app.post('/send', upload.single('vcf'), async (req, res) => {
 });
 
 app.listen(3000, () => console.log('🌐 Server running on http://localhost:3000'));
+        
